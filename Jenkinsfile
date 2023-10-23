@@ -9,6 +9,9 @@ pipeline {
         script {
           sh '''#!/bin/bash
             set -ev
+            
+            env
+            
             tf_version="1.3.6"
             GO_VERSION="1.20.3"
             OC_VERSION="4.11.0-0.okd-2022-10-28-153352"
@@ -42,7 +45,7 @@ pipeline {
     }
     failure {
       echo 'Failure notification'
-      slackSend(channel: "#devops", message: "falhou geral\n ${BUILD_NUMBER} test", color: "#FF0000")
+      slackSend(channel: "#devops", message: "PipelineRun #${BUILD_NUMBER} in Pipeline has FAILED    Triggered by \n geral\n  test", color: "#FF0000")
 
     }
     cleanup {
