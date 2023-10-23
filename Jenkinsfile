@@ -42,6 +42,12 @@ pipeline {
     }
     failure {
       echo 'Failure notification'
+      def attachments = [
+        test: 'test'
+        falback: 'hei body'
+        color: 'bad'
+      ]
+      slackSender(channel: "#devops", attachments: attachments)
     }
     cleanup {
       deleteDir()
