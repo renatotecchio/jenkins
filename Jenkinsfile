@@ -27,7 +27,7 @@ pipeline {
     }
     failure {
       echo 'Failure notification'
-      slackSend(channel: "ic4v-auto-infra", message: "PipelineRun #${BUILD_NUMBER} in Pipeline ${JOB_BASE_NAME} has FAILED\nJenkins View: Default\nURL Link: ${BUILD_URL}", color: "#FF0000")
+      slackSend(channel: "#devops", message: "PipelineRun #${BUILD_NUMBER} in Pipeline ${JOB_BASE_NAME} has FAILED\nJenkins View: Default\nURL Link: ${BUILD_URL}", color: "#FF0000")
     }
     cleanup {
       deleteDir()
