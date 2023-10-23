@@ -45,7 +45,7 @@ pipeline {
     }
     failure {
       echo 'Failure notification'
-      slackSend(channel: "#devops", message: "PipelineRun #${BUILD_NUMBER} in Pipeline ${JOB_BASE_NAME} has FAILED\nURL Link: ${RUN_TESTS_DISPLAY_URL}", color: "#FF0000")
+      slackSend(channel: "#devops", message: "PipelineRun #${BUILD_NUMBER} in Pipeline ${JOB_BASE_NAME} has FAILED\nJenkins View: Gen2\nURL Link: ${RUN_TESTS_DISPLAY_URL}", color: "#FF0000")
 
     }
     cleanup {
