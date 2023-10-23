@@ -1,5 +1,4 @@
 pipeline {
-  agent { label 'ibmcloud' }
   options {
     timestamps()
   }
