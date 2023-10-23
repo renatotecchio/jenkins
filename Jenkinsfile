@@ -45,7 +45,7 @@ pipeline {
     }
     failure {
       echo 'Failure notification'
-      slackSend(channel: "#devops", message: "PipelineRun #${BUILD_NUMBER} in Pipeline has FAILED    Triggered by \n geral\n  test", color: "#FF0000")
+      slackSend(channel: "#devops", message: "PipelineRun #${BUILD_NUMBER} in Pipeline ${JOB_BASE_NAME} has FAILED\nTriggered by ${BUILD_USER}\nStarted: ${date}\n", color: "#FF0000")
 
     }
     cleanup {
