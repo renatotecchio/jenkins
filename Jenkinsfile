@@ -41,18 +41,8 @@ pipeline {
       echo 'Success notification'
     }
     failure {
-       steps {
-        def attachments = [
-          [
-            text: 'test',
-            fallback: 'hei body',
-            color: 'good'
-          ]
-        ]
-       }
       echo 'Failure notification'
-      
-      slackSender(channel: "#devops", attachments: attachments)
+      slackSender(channel: "#devops", message: "falhou geral")
     }
     cleanup {
       deleteDir()
