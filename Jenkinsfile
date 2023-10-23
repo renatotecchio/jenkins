@@ -42,7 +42,7 @@ pipeline {
     }
     failure {
       echo 'Failure notification'
-      slackSend(channel: "#devops", message: "falhou geral\n test", color: "#FF0000", username: "renatotecchio")
+      slackSend(channel: "#devops", message: "falhou geral\n ${BUILD_NUMBER} test", color: "#FF0000")
 
     }
     cleanup {
