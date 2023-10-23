@@ -41,13 +41,15 @@ pipeline {
       echo 'Success notification'
     }
     failure {
-      def attachments = [
-        [
-          text: 'test',
-          fallback: 'hei body',
-          color: 'good'
+       steps {
+        def attachments = [
+          [
+            text: 'test',
+            fallback: 'hei body',
+            color: 'good'
+          ]
         ]
-      ]
+       }
       echo 'Failure notification'
       
       slackSender(channel: "#devops", attachments: attachments)
