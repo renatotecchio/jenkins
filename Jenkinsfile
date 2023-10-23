@@ -42,7 +42,7 @@ pipeline {
     }
     failure {
       echo 'Failure notification'
-      slackSender(channel: "#devops", message: "falhou geral")
+      slackSend(channel: "#devops", message: "falhou geral")
     }
     cleanup {
       deleteDir()
